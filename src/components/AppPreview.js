@@ -1,10 +1,11 @@
 import React from "react";
-import connect from "../containers/count";
 
-const App = ({ number, plus, minus }) => {
+const AppPreview = ({ number, title, days, plus, minus }) => {
   return (
     <div>
-      <h2>App {number}</h2>
+      <h2>
+        {title} {number} {days}
+      </h2>
       <button
         onClick={() => {
           plus(10);
@@ -23,4 +24,4 @@ const App = ({ number, plus, minus }) => {
   );
 };
 
-export default App;
+export default AppPreview;

@@ -4,10 +4,10 @@ import { render } from "react-dom";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 
-import App from "./components/App";
-import { reducer } from "./reducer";
+import Count from "./containers/Count";
+import rootReducer from "./reducer";
 
-const store = createStore(reducer);
+const store = createStore(rootReducer);
 
 // console.log(store);
 
@@ -17,7 +17,7 @@ store.subscribe(() => {
 
 render(
   <Provider store={store}>
-    <App />
+    <Count />
   </Provider>,
   document.getElementById("root")
 );

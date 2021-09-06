@@ -1,4 +1,4 @@
-export const reducer = (state = 0, action) => {
+const number = (state = 0, action) => {
   switch (action.type) {
     case "PLUS":
       return state + action.payload.countNum;
@@ -7,6 +7,8 @@ export const reducer = (state = 0, action) => {
       return state - action.payload.countNum;
 
     default:
-      return;
+      return state;
   }
 };
+
+export default number;
