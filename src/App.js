@@ -1,10 +1,43 @@
-import "./styles.css";
+import React from "react";
+import { connect } from "react-redux";
 
-export default function App() {
+const App = ({ number, plus, minus }) => {
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+    <div>
+      <h2>App {number}</h2>
+      <button
+        onClick={() => {
+          plus(10);
+        }}
+      >
+        +10
+      </button>
+      <button
+        onClick={() => {
+          minus(10);
+        }}
+      >
+        -10
+      </button>
     </div>
   );
-}
+};
+
+const mapStateToProps = (state) => {
+  return {
+    number: state
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    plus: (num) => {
+      dispatch({ type: "PLUS", payload: { countNum: num } });
+    },
+    minus: (num) => {
+      dispatch({ type: "MINUS", payload: { countNum: num } });
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
