@@ -1,2 +1,2 @@
-# react_redux
+react-redux
 Created with CodeSandbox
