@@ -1,6 +1,14 @@
 import React from "react";
 
-const AppPreview = ({ number, title, days, plus, minus }) => {
+const AppPreview = ({
+  number,
+  title,
+  days,
+  plus,
+  minus,
+  asyncMinus,
+  getJson
+}) => {
   return (
     <div>
       <h2>
@@ -19,6 +27,20 @@ const AppPreview = ({ number, title, days, plus, minus }) => {
         }}
       >
         -10
+      </button>
+      <button
+        onClick={() => {
+          asyncMinus(10);
+        }}
+      >
+        async -10
+      </button>
+      <button
+        onClick={() => {
+          getJson();
+        }}
+      >
+        getJson
       </button>
     </div>
   );

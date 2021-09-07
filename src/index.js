@@ -1,13 +1,15 @@
 import React from "react";
 import { render } from "react-dom";
 
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
+import thunk from 'redux-thunk';
 
 import Count from "./containers/Count";
 import rootReducer from "./reducer";
 
-const store = createStore(rootReducer);
+const middleWears = [ thunk ];
+const store = createStore(rootReducer, applyMiddleware(...middleWears));
 
 // console.log(store);
 
